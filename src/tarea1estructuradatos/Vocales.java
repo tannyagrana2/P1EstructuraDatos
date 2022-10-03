@@ -7,39 +7,17 @@ import javax.swing.JOptionPane;
  * @author tannyagranados
  */
 public class Vocales {
-    
-    String Oracion = JOptionPane.showInputDialog("Ingrese la oración: ");
 
-     public void CambiarVocales(){    
-        String [] Arreglo = Oracion.split("");
-        for (int x=0; x< Arreglo.length; x++){
-            switch (Arreglo[x]) {
-                case "a":
-                    Arreglo[x]="";
-                    break;
-                case "e":
-                    Arreglo[x]="";                  
-                    break;
-                case "i":
-                    Arreglo[x]="";                  
-                    break;
-                case "o":
-                    Arreglo[x]="";                    
-                    break;
-                case "u":
-                    Arreglo[x]="";                   
-                    break;
-                default:
-                    break;
+    public static char[] eliminarVocalesR(int i, char[] array) {
+        if (i == array.length) {
+            return array;
+        } else {
+            char aux = array[i];
+            if (aux == 'a' || aux == 'e' || aux == 'i' || aux == 'o' || aux == 'u'
+                    || aux == 'A' || aux == 'E' || aux == 'I' || aux == 'O' || aux == 'U') {
+                array[i] = ' ';
             }
+            return eliminarVocalesR(i + 1, array);
         }
-        JOptionPane.showMessageDialog(null, Arreglo);
-        
     }
-    
-    
 }
-    
-
-    
-
